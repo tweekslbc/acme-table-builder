@@ -45,7 +45,7 @@
             html = html + `</tr>`;
             html = html + `<tr>`
             html = html + this.columns.map((obj)=>{
-              return `<td> ${obj.name} </td> <td> ${obj.role} </td><td> ${obj.salary} </td>`
+              return `<td> ${obj.name} </td> <td> ${obj.role} </td><td> ${obj.salary} </td></tr><tr>`
             }).join("");
             html = html + `</tr>`
             console.log(html);
