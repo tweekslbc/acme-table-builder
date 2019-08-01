@@ -31,22 +31,34 @@
             this.columns = columns;
             this.selector = selector;
           } //constructor end bracket
+
+          //init should give functionality
           init(){
           } //init end bracket
+
+          //render  should add data to table
           render(){
-            let html= '<tr>'
-            html = html + headings.forEach((obj)=>{
-              return `<th> ${obj.title}</th>`
-            });
-            html = html + '</tr>'
-            console.log(html)
+            let html= `<tr>`
+            html = html + this.headings.map((obj)=>{
+              return `<th> ${obj.title} </th>`
+            }).join("");
+            html = html + `</tr>`;
+            html = html + `<tr>`
+            html = html + this.columns.map((obj)=>{
+              return `<td> ${obj.name} </td> <td> ${obj.role} </td><td> ${obj.salary} </td>`
+            }).join("");
+            html = html + `</tr>`
+            console.log(html);
             document.querySelector(this.selector).innerHTML = html;
             //console.log(html)
           } //render end bracket
         } //tablebuiler end bracket
 
 
+
+
     const usersTable = new TableBuilder(
+
       [
         {
           title: 'Name',
@@ -88,7 +100,7 @@
     );
     //usersTable.init();
     const table = document.querySelector('#table');
-
+        usersTable.render();
   </script>
 </body>
 
