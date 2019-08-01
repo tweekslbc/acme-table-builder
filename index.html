@@ -3,7 +3,11 @@
   </head>
 <body>
     <h1> Acme Table Builder </h1>
+
+    <table id='usersTable'></table>
   <script>
+
+
     const usersTable = new TableBuilder(
       [
         {
@@ -45,7 +49,27 @@
       ],
       '#usersTable'//id of DOM element
     );
-    usersTable.init();
+    //usersTable.init();
+
+
+    const table = document.querySelector('#table');
+
+    function TableBuilder(arr, arr2, selector){
+      this.selector = selector;
+      this.arr = arr;
+      this.arr2 = arr2;
+    }
+
+    const init = () => {
+
+    }
+    const render = () =>{
+      console.log('hi');
+
+
+    }
+    render();
+
   </script>
 </body>
 
