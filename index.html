@@ -1,11 +1,51 @@
 <html>
   <head>
+    <style>
+      #usersTable, th, td {
+        border: solid 1px black;
+        height: 2rem;
+      }
+      </style>
   </head>
 <body>
     <h1> Acme Table Builder </h1>
 
-    <table id='usersTable'></table>
+    <table id='usersTable'>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Salary</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
   <script>
+
+
+    class TableBuilder{
+          constructor(headings, columns, selector){
+            this.headings = headings;
+            this.columns = columns;
+            this.selector = selector;
+          } //constructor end bracket
+          init(){
+
+          } //init end bracket
+          render(){
+            let html= '<tr>'
+            html = html + headings.forEach((obj)=>{
+              return `<th> ${obj.title}</th>`
+            });
+            html = html + '</tr>'
+            console.log(html)
+
+            document.querySelector(this.selector).innerHTML = html;
+            //console.log(html)
+          } //render end bracket
+        } //tablebuiler end bracket
 
 
     const usersTable = new TableBuilder(
@@ -53,29 +93,6 @@
 
 
     const table = document.querySelector('#table');
-
-    class TableBuilder{
-      constructor(headings, columns, selector){
-        this.headings = headings;
-        this.columns = columns;
-        this.selector = selector;
-      } //constructor end bracket
-      init(){
-
-      } //init end bracket
-      render(){
-        let html= `</tr>`
-        html = html + headings.forEach((obj)=>{
-          return `<th> ${obj.title}</th>` 
-        }
-
-        )
-
-        html = html +
-        document.querySelector(this.selector).innerHTML = html;
-
-      } //render end bracket
-    } //tablebuiler end bracket
 
 
   </script>
