@@ -54,21 +54,29 @@
 
     const table = document.querySelector('#table');
 
-    function TableBuilder(arr, arr2, selector){
-      this.selector = selector;
-      this.arr = arr;
-      this.arr2 = arr2;
-    }
+    class TableBuilder{
+      constructor(headings, columns, selector){
+        this.headings = headings;
+        this.columns = columns;
+        this.selector = selector;
+      } //constructor end bracket
+      init(){
 
-    const init = () => {
+      } //init end bracket
+      render(){
+        let html= `</tr>`
+        html = html + headings.forEach((obj)=>{
+          return `<th> ${obj.title}</th>` 
+        }
 
-    }
-    const render = () =>{
-      console.log('hi');
+        )
 
+        html = html +
+        document.querySelector(this.selector).innerHTML = html;
 
-    }
-    render();
+      } //render end bracket
+    } //tablebuiler end bracket
+
 
   </script>
 </body>
